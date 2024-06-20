@@ -10,15 +10,15 @@ import matplotlib.animation as anim
 g = 9.8 #gravity in kg/m
 length1 = float(input("Insert length 1: ")) #length1 (assume in m)
 length2 = float(input("Insert length 2: ")) #length2 (assume in m)
-mass1 = int(input("Insert mass 1: ")) #mass pendulum 1 (kg)
-mass2 = int(input("Insert mass 2: ")) #mass pendulum 2 (kg)
+mass1 = float(input("Insert mass 1: ")) #mass pendulum 1 (kg)
+mass2 = float(input("Insert mass 2: ")) #mass pendulum 2 (kg)
  
 # Finding the maximum length of the pendulum system so the figure window can display the system with adequate spacing.
 tl = length1 + length2 + 0.5
  
 # Define starting conditions
 th1 = 1/2 * np.pi #theta1 - initial angle for pendulum 1 (in radian)
-th2 = np.pi/2 #theta2 - intial angle pendulum 2 (dalam radian)
+th2 = np.pi/2 #theta2 - initial angle pendulum 2 (dalam radian)
 w1 = 1 #initial angular velocity pendulum 1 (radian/sec)
 w2 = 1 #initial angular velocity pendulum 2 (radian/sec)
  
@@ -57,7 +57,7 @@ def dr(r):
             damping_torque_1) / (((mass1 + mass2) * length1) - (mass2 * length1 * c**2))
 
     v[3] = (
-            -mass2 * length2 * r[3]**2 * s * c + 
+            (-mass2 * length2 * r[3]**2 * s * c) + 
             (mass1 + mass2) * g * np.sin(r[0]) * c - 
             (mass1 + mass2) * length1 * r[2]**2 * s - 
             (mass1 + mass2) * g * np.sin(r[1]) - 
