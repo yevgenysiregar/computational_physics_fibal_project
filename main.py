@@ -10,8 +10,8 @@ import matplotlib.animation as anim
 g = 9.8 #gravity in kg/m
 length1 = float(input("Insert length 1: ")) #length1 (assume in m)
 length2 = float(input("Insert length 2: ")) #length2 (assume in m)
-mass1 = 8 #mass pendulum 1 (kg)
-mass2 = 2 #mass pendulum 2 (kg)
+mass1 = int(input("Insert mass 1: ")) #mass pendulum 1 (kg)
+mass2 = int(input("Insert mass 2: ")) #mass pendulum 2 (kg)
  
 # Finding the maximum length of the pendulum system so the figure window can display the system with adequate spacing.
 tl = length1 + length2 + 0.5
